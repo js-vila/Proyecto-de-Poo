@@ -1,0 +1,24 @@
+package Ejemplo1;
+
+// Se utiliza la palabra reservada "extends" para implementar el concepto de herencia
+public class Circulo extends Figura {
+
+    // Definicion de atributos propios
+    private double radio;
+
+    // Definicion de constructor con parametro
+    public Circulo(double radio) {
+        if (radio > 0) {
+            this.radio = radio;
+        } else {
+            System.out.println("Valor invalido, asignando radio = 1.0");
+            this.radio = 1.0;
+        }
+    }
+
+    // La anotacion @Override permite implementar el concepto de sobrrescritura
+    // tome en cuenta que el metodo calcualrArea esta siendo heredado desde la clase Figura
+    @Override
+    public double calcularArea() {
+        return Math.PI * radio * radio;
+    }
